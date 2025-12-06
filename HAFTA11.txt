@@ -1,0 +1,23 @@
+select *
+from verilen_urun
+order BY urun_tutar DESC
+----------------------------------
+select sum(alinan_para)
+from para
+where (musteri_kodu=202)
+----------------------------------
+select sum(verilen_para)
+from para
+where (musteri_kodu=202)
+----------------------------------
+select sum(urun_tutar)
+from verilen_urun
+where (musteri_kodu=202)
+----------------------------------
+select sum(sut_tutar) AS EX1
+from alinan_sut
+where (musteri_kodu=202)
+----------------------------------
+select (sum(sut_lt)*40)/
+(select datediff(day,'2014-02-13','2016-12-25')) as ciro
+from alinan_sut
